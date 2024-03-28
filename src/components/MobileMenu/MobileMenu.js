@@ -3,17 +3,13 @@ import React from "react";
 import styled from "styled-components/macro";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 
-import { COLORS, WEIGHTS } from "../../constants";
+import { WEIGHTS } from "../../constants";
 
 import UnstyledButton from "../UnstyledButton";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  // if (!isOpen) {
-  //   return null;
-  // }
-
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content>
@@ -49,7 +45,7 @@ const Overlay = styled(DialogOverlay)`
   bottom: 0;
   display: flex;
   justify-content: flex-end;
-  background: hsl(220deg 5% 40% / 0.8);
+  background: var(--color-backdrop);
 `;
 
 const Content = styled(DialogContent)`
@@ -71,14 +67,14 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   text-decoration: none;
   font-weight: ${WEIGHTS.medium};
   font-size: 18/16rem;
   text-transform: uppercase;
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 
   &:hover {
@@ -93,7 +89,7 @@ const Footer = styled.footer`
   gap: 14px;
   flex: 1;
   font-size: 14/16rem;
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
 `;
 
 const FooterLink = styled.a`
